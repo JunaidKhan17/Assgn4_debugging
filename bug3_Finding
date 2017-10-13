@@ -1,0 +1,12 @@
+@Test
+    public void testAge(){
+        Player p=new Player("Fred", 100);
+        Dice die1=new Dice();
+        Dice die2=new Dice();
+        Dice die3=new Dice();
+        Game g=new Game(die1, die2, die3);
+        List<DiceValue> cdv = g.getDiceValues();
+        DiceValue pick = DiceValue.getRandom2();
+        g.playRound(p, pick, 5);
+        
+    }
