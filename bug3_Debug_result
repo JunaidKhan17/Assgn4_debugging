@@ -1,0 +1,7 @@
+ @Test
+    public void testAge(){
+        Player p=new Player("Fred", 100,17);
+        assertFalse(p.ageValid());
+        
+        
+    }
