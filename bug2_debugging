@@ -1,0 +1,13 @@
+@Test
+    public void testDiceRoll() {
+        Player p = new Player("Fred", 100);
+        List<DiceValue> cdv = null;
+        int count = 0;
+        int bet = 5;
+        Dice dice=new Dice();
+        Dice dice2=new Dice();
+        Dice dice3=new Dice();
+        Game game=new Game(dice, dice2, dice3);
+        assertEquals("The dice must be flat some time",dice.toString(), "NOTFLAT");
+    }
+
