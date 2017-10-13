@@ -1,0 +1,44 @@
+ @Test
+    public void testDiceRoll() {
+        Player p = new Player("Fred", 100);
+        List<DiceValue> cdv = null;
+        int count = 0;
+        int bet = 5;
+        String dice1 = "";
+        String dice2 = "";
+        String dice3 = "";
+        Dice d1=null;
+        Dice d2=null;
+        Dice d3=null;
+        d1 = new Dice();
+            d2 = new Dice();
+            d3 = new Dice();
+
+        while (p.balanceExceedsLimitBy(bet) && p.getBalance() < 200) {
+//            if(count>0){
+//                cdv.remove(d1);
+//                cdv.remove(d2);
+//                cdv.remove(d3);
+//            }
+//            
+
+            
+            Game game = new Game(d1, d2, d3);
+            cdv = game.getDiceValues();
+
+            dice1 = cdv.get(0).toString();
+            dice2 = cdv.get(1).toString();
+            dice3 = cdv.get(2).toString();
+        
+
+            Dice dice4 = new Dice();
+            count++;
+
+            DiceValue pick = DiceValue.getRandom();
+            int winnings = game.playRound(p, pick, bet);
+            assertEquals("The value of dice should not always be" + dice1, d1.toString(), dice1);
+            assertEquals("The value of dice should not always be" + dice1, d2.toString(), dice2);
+            assertEquals("The value of dice should not always be" + dice1, d3.toString(), dice3);
+        }
+
+    }
