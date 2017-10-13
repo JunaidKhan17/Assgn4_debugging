@@ -1,0 +1,6 @@
+@Test
+    public void winLossRatio() throws Exception{
+        Player p=new Player("Fred", 100, 18);
+        Main game=new Main();
+        assertEquals(42.0,(game.gettotalWins()*100)/(game.gettotalWins()+game.getTotalLosses()), 1.0);
+    }
