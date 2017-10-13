@@ -1,0 +1,6 @@
+@Test
+    public void testbalanceExceedsLimitBy(){
+        Player p=new Player("Fred",10);
+        p.takeBet(5);
+        assertEquals("This should pass the test", p.balanceExceedsLimitBy(5),true);
+    }
